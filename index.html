@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="top-header">
+    <div class="logo">NMT</div>
+    <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Help</a>
+        <a href="#">Contact Us</a>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main class="container">
+
+    <!-- Library Services + Hero -->
+    <h1>Library Services</h1>
+    <section class="hero-section">
+        <img src="images/image01.jpg" alt="Library" class="hero-image">
+
+        <div class="hero-info">
+            <p><strong>Location</strong><br>📍 Locked Bag 6,<br>Northbridge<br>WA 6865</p>
+<br>
+            <p><strong>Contact</strong><br>📞 <a href="#">1300 300 822</a></p>
+<br>
+            <p><strong>Open Hours</strong><br>
+            <strong>Monday</strong> 8 am–4 pm<br>
+            <strong>Tuesday</strong> 8 am–4 pm<br>
+            <strong>Wednesday</strong> 8 am–4 pm<br>
+            <strong>Thursday</strong> 8 am–4 pm<br>
+            <strong>Friday</strong> 8 am–4 pm<br>
+            <strong>Saturday</strong> Closed<br>
+            <strong>Sunday</strong> Closed</p>
+        </div>
+    </section>
+
+    <!-- Catalogue Search -->
+    <h2>Catalogue search</h2>
+    <input type="text" class="search-input">
+    <button class="search-btn">Search 🔍</button>
+
+    <!-- Library Services Buttons -->
+    <h2>Library Services</h2>
+    <div class="services-grid">
+        <button>Assessment Help <i class="fa-solid fa-circle-question"></i></button>
+        <button>Course Resources <i class="fa-solid fa-book-open"></i></button>
+        <button>English AMEP <i class="fa-solid fa-globe"></i></button>
+        <button>Getting Online <i class="fa-solid fa-laptop"></i></button>
+        <button>Standards Australia <i class="fa-solid fa-landmark"></i></button>
+        <button>Print <i class="fa-solid fa-print"></i></button>
+        <button>Blackboard <i class="fa-solid fa-chalkboard"></i></button>
+        <button>Microsoft 365 <i class="fa-brands fa-microsoft"></i></button>
+    </div>
+
+    <!-- Using the Library -->
+    <h2>Using the Library</h2>
+<section class="using-section">
+    <ul class="faq-list">
+        <li data-answer="print" class="active">How to Print on Campus?</li>
+        <li data-answer="blackboard">How to use a Blackboard?</li>
+        <li data-answer="login">How to login to computer?</li>
+        <li data-answer="m365">What is Microsoft 365?</li>
+        <li data-answer="enroll">How to enroll to course?</li>
+    </ul>
+
+    <div class="faq-answer">
+        
+
+        <p id="answer-print" class="answer-text">
+            Go to the printer, login with Student ID, select your file, and press print.
+            <img id="faq-image" src="images/image01.jpg" alt="Library" class="faq-placeholder">
+        </p>
+        <p id="answer-blackboard" class="answer-text hidden">
+            Login to Blackboard using your student email and password.
+           
+        </p>
+        <p id="answer-login" class="answer-text hidden">
+            Use your student ID and password provided by TAFE.
+        </p>
+        <p id="answer-m365" class="answer-text hidden">
+            Microsoft 365 is a suite of tools like Outlook, Word, Teams, OneDrive.
+        </p>
+        <p id="answer-enroll" class="answer-text hidden">
+            Enroll through the Student Portal or ask Student Services for help.
+        </p>
+    </div>
+</section>
+<script>
+const questions = document.querySelectorAll('.faq-list li');
+const answers = document.querySelectorAll('.answer-text');
+const image = document.getElementById('faq-image');
+
+questions.forEach(question => {
+    question.addEventListener('click', () => {
+
+        questions.forEach(q => q.classList.remove('active'));
+        question.classList.add('active');
+
+        answers.forEach(ans => ans.classList.add('hidden'));
+
+        const target = question.getAttribute('data-answer');
+        document.getElementById(`answer-${target}`).classList.remove('hidden');
+
+        image.style.display = target === 'print' ? 'block' : 'none';
+    });
+});
+</script>
+
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <h2>Welcome</h2>
+    <div class="footer-content">
+        <div>
+            <strong>Location</strong><br>
+            📍 Locked Bag 6,<br>Northbridge<br>WA 6865<br><br>
+            <strong>Contact</strong><br>📞 1300 300 822
+        </div>
+        <div>
+            <strong>Open Hours</strong><br>
+            Monday 8 am–4 pm<br>
+            Tuesday 8 am–4 pm<br>
+            Wednesday 8 am–4 pm<br>
+            Thursday 8 am–4 pm<br>
+            Friday 8 am–4 pm<br>
+            Saturday Closed<br>
+            Sunday Closed
+        </div>
+        <div>
+            <strong>Acknowledgement of Country</strong>
+            <p>The NMT acknowledges the Whadjuk Noongar people as the Traditional Owners of the lands and waters where Perth city is situated today, and pays our respect to Elders past and present.</p>
+        </div>
+        <div>
+            <strong>Cultural Sensitivity Warning</strong>
+            <p>Aboriginal and Torres Strait Islander people are advised that this website may contain names, images, voices and videos of deceased persons.</p>
+        </div>
+    </div>
+    <p class="copyright">Team Library Project. Copyright 2025</p>
+</footer>
+
+</body>
+</html>
